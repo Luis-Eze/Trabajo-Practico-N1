@@ -1,0 +1,111 @@
+* { box-sizing: border-box; }
+:root {
+    --bg: #f7fafc;
+    --text: #1f2937;
+    --muted: #6b7280;
+    --card: #ffffff;
+    --accent: #2563eb;
+    --accent-ghost: #dbeafe;
+    --ok: #065f46;
+    --err: #b91c1c;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+}
+
+.container {
+    max-width: 720px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+h1 { margin: 0 0 0.5rem; }
+p { color: var(--muted); margin-top: 0; }
+
+.uploader {
+    margin-top: 1.25rem;
+    background: var(--card);
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 1px 2px rgba(0,0,0,.04);
+}
+
+.uploader h2 {
+    font-size: 1.1rem;
+    margin: 0 0 0.75rem;
+}
+
+/* ===== Drag & Drop ===== */
+.dropzone {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.25rem;
+    border: 2px dashed #94a3b8;
+    border-radius: 12px;
+    background: #f9fafb;
+    color: var(--muted);
+    cursor: pointer;
+    transition: border-color .15s ease, background .15s ease, color .15s ease;
+    outline: none;
+}
+
+.dropzone.dragover {
+    background: var(--accent-ghost);
+    border-color: var(--accent);
+    color: var(--text);
+}
+
+.dropzone p { margin: 0; text-align: center; }
+.dropzone p span { color: var(--text); font-weight: 600; }
+
+/* ocultar visualmente el input real, pero accesible */
+.dropzone input[type="file"] {
+    position: absolute;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0);
+    border: 0;
+}
+
+.msg {
+    min-height: 1.25rem;
+    margin: 0.5rem 0 0;
+    color: var(--ok);
+}
+
+.preview {
+    margin-top: 0.75rem;
+    border-top: 1px dashed #e5e7eb;
+    padding-top: 0.75rem;
+}
+
+.preview img {
+    display: block;
+    max-width: min(100%, 480px);
+    border-radius: 10px;
+    box-shadow: 0 6px 16px rgba(0,0,0,.06);
+}
+
+.meta {
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+    color: var(--muted);
+}
+
+.hidden { display: none; }
+
+.noscript {
+    margin-top: 0.75rem;
+    color: var(--err);
+    background: #fee2e2;
+    border: 1px solid #fecaca;
+    padding: 0.5rem;
+    border-radius: 8px;
+}

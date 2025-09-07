@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Trabajo Práctico N°1</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="punto1.css" />
+        <script defer src="script.js"></script>
+    </head>
+
+    <body>
+        <main class="container">
+            <h1>Subir imagen</h1>
+            <p>Subir una imagen y se va a mostrar aquí.</p>
+            
+            <section class="uploader" aria-labelledby="uploaderTitle">
+                <h2 id="uploaderTitle">Seleccioná un archivo de imagen</h2>
+
+                <!-- Drag & Drop -->
+                <div id="dropZone"
+                    class="dropzone"
+                    tabindex="0"
+                    role="button"
+                    aria-label="Soltar o seleccionar una imagen">
+                    <input id="fileInput" type="file" accept="image/*" aria-hidden="true" />
+                    <p>
+                        Arrastrá y soltá una imagen aquí
+                        <br><span>o hacé clic para elegir</span>
+                    </p>
+                </div>
+
+                <output id="msg" role="status" aria-live="polite" class="msg"></output>
+
+                <figure id="previewContainer" class="preview hidden">
+                    <img id="preview" alt="Vista previa de la imagen seleccionada" />
+                    <figcaption id="meta" class="meta"></figcaption>
+                </figure>
+
+                <noscript class="noscript">
+                    Esta página necesita JavaScript para previsualizar imágenes.
+                </noscript>
+            </section>
+        </main>
+
+        <script>
+
+        </script>
+    </body>
+</html>
